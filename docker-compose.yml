@@ -1,0 +1,15 @@
+version: '2.28.1'
+
+services:
+  postgres:
+    container_name: news-dot-dev-postgres
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: news-dot-dev
+      POSTGRES_DATA: /data/postgres
+    volumes:
+      - ./data/postgres:/data/postgres
